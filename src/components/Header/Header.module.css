@@ -1,0 +1,13 @@
+.headerWrapper {
+  text-align: start;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.subTitle {
+  margin-top: 8px;
+  margin-bottom: 1.5rem;
+}
