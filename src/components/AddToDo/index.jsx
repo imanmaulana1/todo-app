@@ -76,6 +76,7 @@ function AddToDo({ addTodo }) {
 
 AddToDo.propTypes = {
   addTodo: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 export default AddToDo;
