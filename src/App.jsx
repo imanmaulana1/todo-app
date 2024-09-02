@@ -3,11 +3,12 @@ import Header from './components/Header';
 import AddToDo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import Toast from './components/Toast';
+import useLocalStorage from './hooks/useLocalStorage';
 
 import './App.css';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useLocalStorage('todos', []);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
 
@@ -47,7 +48,6 @@ function App() {
     setShowToast(false);
   }
 
-  console.log(todos);
   return (
     <div className='container'>
       <Toast
