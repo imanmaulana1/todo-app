@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { MdDone, MdDelete } from 'react-icons/md';
 import styles from './ToDoItem.module.css';
 
-function ToDoItem({ todo, onToggleComplete, colorDot }) {
+function ToDoItem({
+  todo: { id, task, isCompleted },
+  onToggleComplete,
+  colorDot,
+  removeTodo,
+}) {
   return (
     <li>
       <div className={styles.taskItem}>
@@ -11,33 +16,29 @@ function ToDoItem({ todo, onToggleComplete, colorDot }) {
           <div
             className={styles.dot}
             style={
-              todo.isCompleted === false
-                ? colorDot
-                : { backgroundColor: '#cccccc' }
+              isCompleted === false ? colorDot : { backgroundColor: '#cccccc' }
             }
           ></div>
-          <p className={todo.isCompleted ? styles.taskComplete : ''}>
-            {todo.task}
-          </p>
+          <p className={isCompleted ? styles.taskComplete : ''}>{task}</p>
         </div>
         <div className={styles.wrapperCta}>
           <div
             className={
-              todo.isCompleted
+              isCompleted
                 ? `${styles.doneCta} ${styles.complete}`
                 : styles.doneCta
             }
           >
             <MdDone
-              onClick={() => onToggleComplete(todo.id)}
+              onClick={() => onToggleComplete(id)}
               className={
-                todo.isCompleted
+                isCompleted
                   ? `${styles.check} ${styles.complete}`
                   : styles.check
               }
             />
           </div>
-          <MdDelete />
+          <MdDelete className={styles.deleteIcon} onClick={() => removeTodo(id)} />
         </div>
       </div>
     </li>
@@ -50,10 +51,11 @@ ToDoItem.propTypes = {
     task: PropTypes.string,
     isCompleted: PropTypes.bool,
   }),
-  onToggleComplete: PropTypes.func,
   colorDot: PropTypes.shape({
     backgroundColor: PropTypes.string,
   }),
+  onToggleComplete: PropTypes.func,
+  removeTodo: PropTypes.func,
 };
 
 export default ToDoItem;

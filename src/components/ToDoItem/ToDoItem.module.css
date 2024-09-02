@@ -45,13 +45,18 @@
 
 .check {
   color: #bbbbbb;
+  cursor: pointer;
   transition: color 0.4s ease;
 }
 
 .doneCta.complete {
-  border-color:  #ca8bfe;
+  border-color: #ca8bfe;
 }
 
 .check.complete {
   color: #6c3d92;
+}
+
+.deleteIcon {
+  cursor: pointer;
 }

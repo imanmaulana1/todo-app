@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './TodoList.module.css';
 import ToDoItem from '../TodoItem';
 
-function TodoList({ todos, onToggleComplete }) {
+function TodoList({ todos, onToggleComplete, removeTodo }) {
   const colorDots = ['#fd99af', '#fac608', '#3fd4f4'];
 
   const getDynamicColorDots = (index) => {
@@ -19,6 +19,7 @@ function TodoList({ todos, onToggleComplete }) {
             key={todo.id}
             onToggleComplete={onToggleComplete}
             colorDot={getDynamicColorDots(index)}
+            removeTodo={removeTodo}
           />
         ))}
     </ul>
@@ -34,5 +35,6 @@ TodoList.propTypes = {
     })
   ),
   onToggleComplete: PropTypes.func,
+  removeTodo: PropTypes.func,
 };
 export default TodoList;

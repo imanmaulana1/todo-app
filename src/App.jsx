@@ -23,6 +23,18 @@ function App() {
     }, 3000);
   }
 
+  function removeTodo(id) {
+    setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== id));
+
+    setShowToast(true);
+
+    setToastMessage('ToDo item removed successfully!');
+
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  }
+
   function handleToggleComplete(id) {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
@@ -45,7 +57,11 @@ function App() {
       />
       <Header />
       <AddToDo addTodo={addTodo} />
-      <TodoList todos={todos} onToggleComplete={handleToggleComplete} />
+      <TodoList
+        todos={todos}
+        onToggleComplete={handleToggleComplete}
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }
