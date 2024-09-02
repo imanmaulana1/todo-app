@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import AddToDo from './components/AddTodo';
+import AddToDo from './components/AddToDo';
 import TodoList from './components/TodoList';
 import Toast from './components/Toast';
 import useLocalStorage from './hooks/useLocalStorage';
