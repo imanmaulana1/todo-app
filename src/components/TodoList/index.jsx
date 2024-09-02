@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './TodoList.module.css';
-import ToDoItem from '../TodoItem';
+import ToDoItem from '../ToDoItem';
 
 function TodoList({ todos, onToggleComplete, removeTodo }) {
   const colorDots = ['#fd99af', '#fac608', '#3fd4f4'];
