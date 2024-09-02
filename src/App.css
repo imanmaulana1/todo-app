@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 525px;
   margin-inline: auto;

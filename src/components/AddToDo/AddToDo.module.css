@@ -41,9 +41,25 @@
   animation-delay: 0.2s;
 }
 
-.inputTodo {
+.formGroup {
   flex: 1;
-  padding: 0.6rem 0.8rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.inputTodo {
+  width: 100%;
+  padding: 0.6rem;
   color: #717082;
 }
 
@@ -59,16 +75,4 @@
   50% {
     transform: translateY(-4px);
   }
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }

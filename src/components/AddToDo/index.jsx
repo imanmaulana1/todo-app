@@ -47,24 +47,26 @@ function AddToDo({ addTodo }) {
               ></div>
             ))}
           </div>
-          <label htmlFor='todoInput' className={styles.srOnly}>
-            Task Input
-          </label>
-          <input
-            type='text'
-            name='todo'
-            id='todoInput'
-            value={todo.task}
-            placeholder={
-              isFocus ? 'Please enter...' : 'What is your next task?'
-            }
-            className={styles.inputTodo}
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            autoComplete='off'
-            required
-          />
+          <div className={styles.formGroup}>
+            <label htmlFor='todoInput' className={styles.srOnly}>
+              Task Input
+            </label>
+            <input
+              type='text'
+              name='todo'
+              id='todoInput'
+              value={todo.task}
+              placeholder={
+                isFocus ? 'Please enter...' : 'What is your next task?'
+              }
+              className={styles.inputTodo}
+              onChange={handleChange}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              autoComplete='off'
+              required
+            />
+          </div>
         </div>
       </form>
     </section>
