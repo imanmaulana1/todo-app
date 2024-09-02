@@ -1,0 +1,57 @@
+.taskItem {
+  height: 40px;
+  padding-inline: 0.8rem;
+  color: #717082;
+  background-color: #f9f8fe;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskItemContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.taskComplete {
+  text-decoration: line-through;
+  color: #bbbbbb;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.wrapperCta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doneCta {
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 2px solid #bbbbbb;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.check {
+  color: #bbbbbb;
+  transition: color 0.4s ease;
+}
+
+.doneCta.complete {
+  border-color:  #ca8bfe;
+}
+
+.check.complete {
+  color: #6c3d92;
+}
